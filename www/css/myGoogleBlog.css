@@ -1,0 +1,21 @@
+.news-content-wrapper .gs-watermark,
+.news-content-wrapper .gs-visibleUrl,
+.news-content-wrapper .gs-relativePublishedDate {
+    display: none;
+}
+
+.news-content-wrapper .gs-result .gs-snippet {
+    font-size: 12px;
+}
+
+.news-content-wrapper .gs-relativePublishedDate,
+.news-content-wrapper .gs-publishedDate {
+    font-size: 13px;
+}
+
+.news-content-wrapper .gs-result .gs-title,
+.news-content-wrapper .gs-result .gs-title *{
+    color: inherit;
+    text-decoration: none;
+}
+

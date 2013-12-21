@@ -1,0 +1,117 @@
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1005;
+    height: 50px;
+    line-height: 15px;
+    font-size: 25px;
+}
+
+.footer {
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    z-index: 1005;
+    line-height: 15px;
+    font-size: 25px;
+}
+
+.ticker-content-wrapper {
+    text-align: center;
+}
+
+.big-ticker {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.big-ticker-last {
+    font-size: 35px;
+}
+
+.small-ticker-percentage-down {
+    font-size: 20px;
+}
+
+.small-ticker-percentage-down {
+    color: red;
+}
+
+.small-ticker-percentage-up {
+    color: green;
+}
+
+.new-content-wrapper {
+
+}
+
+.news-content-list {
+
+}
+
+.news-headline {
+    white-space: normal;
+}
+
+.news-date {
+    color: gray;
+    font-size: 10px;
+}
+
+.news-text {
+    font-size: 13px;
+    height: inherit;
+    white-space: normal;
+    color: dimgrey;
+}
+
+.ticker-table {
+    width: 70%;
+    margin: 0 auto;
+    text-align: left;
+    margin-top: 50px;
+}
+
+.ticker-table .ticker-table-text{
+    font-weight: bold;
+    width: 80px;
+}
+
+.calc-content-wrapper {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.calc-input {
+    width: 97%;
+    margin: 20px 0px;
+    font-size: 30px;
+}
+
+.calc-label {
+    font-size: 20px;
+    text-align: left;
+}
+
+.header a.left-panel-flat-menu-icon {
+    font-size: 31px;
+    padding: 0;
+    top: 0px;
+    line-height: 45px;
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    border: none;
+    left: 0;
+    border-radius: 45px;
+}
+
+.panel-logo {
+    width: 40px;
+    float: left;
+    margin: 5px;
+    position: absolute;
+
+}

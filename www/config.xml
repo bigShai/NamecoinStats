@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.bigshai.namecoinstats" version="2.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Namecoin Stats</name>
+    <description>
+        Are you a part of the Namecoin community?
+        Interested in seeing what Namecoin is all about?
+        This app was created for YOU!
+
+        + Daily Updates of Namecoin NEWS and BLOGS!
+        + Live TICKER (Both USD and BTC)
+        + Namecoin Calculator
+
+        * The Namecoin community is rapidly growing!
+        Help us Support the growth!
+        Get "Namecoin Stats" while it's FREE!
+
+        Questions? Feedback?
+        Please, Lets us know!
+    </description>
+    <author email="reshef.shai@gmail.com" href="http://namecoin.info//">
+       Shai Reshef
+    </author>
+
+    <preference name="orientation" value="portrait" />
+    <preference name="target-device" value="universal" />
+    <preference name="fullscreen" value="true" />
+    <preference name="webviewbounce" value="true" />
+    <preference name="prerendered-icon" value="true" />
+    <preference name="stay-in-webview" value="false" />
+    <preference name="ios-statusbarstyle" value="black-opaque" />
+    <preference name="detect-data-types" value="true" />
+    <preference name="exit-on-suspend" value="true" />
+    <preference name="show-splash-screen-spinner" value="true" />
+    <preference name="auto-hide-splash-screen" value="true" />
+    <preference name="disable-cursor" value="false" />
+    <preference name="android-minSdkVersion" value="7" />
+    <preference name="android-installLocation" value="auto" />
+
+    <icon src="icon.png" />
+    <icon src="icon-57.png" gap:platform="ios" width="57" height="57" />
+    <icon src="icon-72.png" gap:platform="ios" width="72" height="72" />
+    <icon src="icon-114.png" gap:platform="ios" width="114" height="114" />
+
+    <!-- retina iPad support: PhoneGap 2.5.0+ only -->
+    <icon src="icon-144.png" gap:platform="ios" width="144" height="144" />
+
+    <plugin name="SplashScreen" value="CDVSplashScreen" />
+    <gap:splash src="splash.png" />
+
+    <access origin="*" />
+    <access uri="*" subdomains="true" />
+
+    <feature name="http://api.phonegap.com/1.0/device"/>
+
+    <gap:plugin name="com.adobe.plugins.gaplugin" />
+    <plugin name="InAppBrowser" value="CDVInAppBrowser" />
+
+</widget>

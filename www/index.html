@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>NameCoin Stats</title>
+
+<!--css-->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" />
+<link rel="stylesheet" type="text/css" href="css/myflatui.css" />
+<link rel="stylesheet" type="text/css" href="css/myGoogleBlog.css" />
+<link rel="stylesheet" type="text/css" href="css/index.css" />
+
+<!--js-->
+<script src="js/libs/jquery-1.9.1.min.js"></script>
+<script src="js/libs/jquery.mobile-1.4.0-rc.1.js"></script>
+
+<script src="js/libs/underscore-min.js"></script>
+<script src="js/libs/backbone-min.js"></script>
+<script src="js/libs/handlebars-v1.1.2.js"></script>
+<script data-main="js/main.js" src="js/require.js"></script>
+
+<!--phonegap-->
+<script src="phonegap.js"></script>
+<script type="text/javascript" src="GAPlugin.js"></script>
+
+</head>
+<body>
+<div data-role="page">
+
+    <div data-role="panel" id="left-panel" data-theme="a">
+        <img class="panel-logo" src="img/Namecoin-Logo%201.png">
+        <ul data-role="listview" data-theme="c">
+            <li data-icon="gear"><a name="panel-settings">Settings</a></li>
+        </ul>
+    </div>
+
+    <div class="header" data-role="header" data-theme="a">
+        <img class="panel-logo" src="img/NamecoinCircle.png">
+        <h1 class="header-text">Ticker</h1>
+    </div>
+
+    <div class="content" data-role="content" role="main">
+            <img src="css/images/ajax-loader.gif">
+     </div>
+
+    <div class="footer" data-role="footer" data-theme="d">
+        <div data-role="navbar">
+            <ul>
+                <li><a name="panel-ticker" class="ui-btn-active">Ticker</a></li>
+                <li><a name="panel-news">News</a></li>
+                <li><a name="panel-calc">Calculator</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!--templates-->
+<div class="ticker-content" style="display: none">
+    <div class="ticker-content-wrapper">
+        <hr>
+        <div class="big-ticker big-ticker-usd">
+            <div class="big-ticker-last">$ {{usd.ticker.last}}</div>
+            <div class="small-ticker-percentage
+                        {{#if usd.up}} small-ticker-percentage-up {{else}} small-ticker-percentage-down {{/if}}">
+                {{#if usd.up}} + {{/if}}
+                {{#if usd.percentage}}{{usd.percentage}}%{{/if}}
+            </div>
+        </div>
+        <table class="ticker-table" data-role="table" id="ticker-table" data-mode="reflow">
+            <tbody>
+            <tr>
+                <td class="ticker-table-text">Volume</td>
+                <td>{{usd.ticker.vol}}</td>
+            </tr>
+            <tr>
+                <td class="ticker-table-text">High</td>
+                <td>{{usd.ticker.high}}</td>
+            </tr>
+            <tr>
+                <td class="ticker-table-text">Low</td>
+                <td>{{usd.ticker.low}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <hr>
+
+    <div class="big-ticker big-ticker-btc">
+        <div class="big-ticker-last">฿ {{btc.ticker.last}}</div>
+        <div class="small-ticker-percentage
+                        {{#if btc.up}} small-ticker-percentage-up {{else}} small-ticker-percentage-down {{/if}}">
+            {{#if btc.up}} + {{/if}}
+            {{#if btc.percentage}}{{btc.percentage}}%{{/if}}
+        </div>
+    </div>
+    <table class="ticker-table" data-role="table" id="ticker-table" data-mode="reflow">
+        <tbody>
+        <tr>
+            <td class="ticker-table-text">Volume</td>
+            <td>{{btc.ticker.vol}}</td>
+        </tr>
+        <tr>
+            <td class="ticker-table-text">High</td>
+            <td>{{btc.ticker.high}}</td>
+        </tr>
+        <tr>
+            <td class="ticker-table-text">Low</td>
+            <td>{{btc.ticker.low}}</td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
+
+<div class="news-content" style="display: none">
+    <div class="news-content-wrapper">
+        <ul class="news-content-list" data-role="listview" data-inset="false" data-theme="c">
+        </ul>
+    </div>
+</div>
+
+<div class="news-list-item-template" style="display: none">
+    <li class="news-list-item">
+        <a onclick="window.open('{{postUrl}}', '_blank', 'location=yes');">
+            <div class="news-headline">{{titleNoFormatting}}</div>
+            <div class="news-date">{{publishedDate}}</div>
+            <div class="news-text">{{content}}</div>
+        </a>
+    </li>
+</div>
+
+<div class="calc-content" style="display: none">
+    <div class="calc-content-wrapper">
+        <div class="calc-label">Namecoins:</div>
+        <input class="calc-input" type="text" id="calc-nmc" placeholder="Enter Amount" >
+        <div class="calc-label">US Dollars:</div>
+        <input class="calc-input" type="text" id="calc-usd" placeholder="Enter Amount" >
+        <div class="calc-label">Bitcoins:</div>
+        <input class="calc-input" type="text" id="calc-btc" placeholder="Enter Amount" >
+    </div>
+</div>
+
+<div class="settings-content" style="display: none">
+    <div class="settings-content-wrapper">
+
+    </div>
+</div>
+
+<script src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+
+    var onDeviceReady = function () {
+        require(['views/MainView'], function(MainView){
+            new MainView({
+                el: $(document.body)
+            });
+        });
+    } ;
+
+    document.addEventListener('deviceready',onDeviceReady, true);
+
+    google.load('search', '1');
+</script>
+</body>
+</html>
+
