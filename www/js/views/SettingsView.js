@@ -8,7 +8,7 @@ define([
         },
 
         initialize: function () {
-        },
+        }
 
 
     });

@@ -21,7 +21,7 @@ define([
 
             _.each(results, function(result){
                 result.titleNoFormatting = $('<div/>').html(result.titleNoFormatting).html();
-                result.content = $('<div/>').html(result.content).html();
+                result.content = $('<div/>').html(result.content).text();
                 result.publishedDate = new Date(result.publishedDate).toDateString();
                 thisView.$('.news-content-list').append(thisView.listItemTemplate(result));
             });
