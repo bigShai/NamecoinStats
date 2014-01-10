@@ -153,6 +153,7 @@
 <script type="text/javascript">
 
     var onDeviceReady = function () {
+        navigator.splashscreen && navigator.splashscreen.hide();
         require(['views/MainView'], function(MainView){
             new MainView({
                 el: $(document.body)

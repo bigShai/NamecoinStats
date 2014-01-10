@@ -1,0 +1,24 @@
+{
+  "name": "namecoinstats",
+  "version": "2.1.0",
+  "description": "NamecoinStats =============",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bigShai/NamecoinStats.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/bigShai/NamecoinStats/issues"
+  },
+  "devDependencies": {
+    "grunt": "0.4.2",
+    "grunt-phonegap-build": "0.0.8",
+    "grunt-zipstream": "0.2.2"
+  }
+}
